@@ -1,4 +1,46 @@
-Welcome to your new TanStack app! 
+# TanStack Start SPA Mode Hydration Issue Reproduction
+
+Reproduction repository for [TanStack Router Issue #6455](https://github.com/TanStack/router/issues/6455).
+
+## Issue Summary
+
+Direct navigation to non-root routes in TanStack Start SPA mode causes React hydration errors and visible content flashing. This reproduction uses Cloudflare.
+
+## Steps to Reproduce
+
+1. **Clone and navigate**
+```bash
+   git clone https://github.com/bbertold/tanstack-start-spa.git
+   cd tanstack-start-spa
+```
+
+2. **Install dependencies**
+```bash
+   pnpm install
+```
+
+3. **Build the application**
+```bash
+   pnpm build
+```
+
+4. **Preview the build**
+```bash
+   pnpm preview
+```
+
+5. **Trigger the error**
+   - Open your browser
+   - Navigate directly to `/example` in the URL bar
+   - Press Enter
+   - Observe the hydration error in the console and content flash
+
+## Note
+
+The error only occurs on **direct navigation**, not when using client-side navigation via `<Link>` components.
+
+
+# Welcome to your new TanStack app! 
 
 # Getting Started
 
